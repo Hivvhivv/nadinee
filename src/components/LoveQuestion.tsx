@@ -195,6 +195,7 @@ export function LoveQuestion({ onYesClicked }: LoveQuestionProps) {
               transition={{ delay: 0.5 }}
               className="mb-10"
             >
+
               <h3 className="text-3xl font-semibold text-pink-700 mb-4">
                 Do you love me?
               </h3>
@@ -206,6 +207,7 @@ export function LoveQuestion({ onYesClicked }: LoveQuestionProps) {
             {/* Buttons */}
             <div className="flex justify-center items-center space-x-8 relative">
               {/* Yes Button */}
+
               <motion.div
                 initial={{ x: -50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -232,21 +234,20 @@ export function LoveQuestion({ onYesClicked }: LoveQuestionProps) {
                   opacity: 1 
                 }}
                 transition={{ 
-                  delay: 0.7,
+                  delay: 0,
                   type: "spring",
                   damping: 15,
                   stiffness: 300
                 }}
                 whileHover={{ scale: 1.1 }}
               >
-                <Button
-                  onMouseEnter={handleNoHover}
-                  className="px-8 py-6 text-xl bg-gray-300 hover:bg-gray-400 text-gray-700 shadow-lg transition-all duration-300 min-w-[120px] cursor-pointer"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNoHover();
-                  }}
-                >
+                 <Button
+    onClick={(e) => {
+      e.preventDefault();
+      handleNoHover(); // pindah posisi saat diklik
+    }}
+    className="px-8 py-6 text-xl bg-gray-300 hover:bg-gray-400 text-gray-700 shadow-lg transition-all duration-300 min-w-[120px] cursor-pointer"
+  >
                   No
                 </Button>
               </motion.div>
